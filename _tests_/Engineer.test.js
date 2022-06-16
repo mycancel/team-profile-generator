@@ -94,5 +94,14 @@ describe('Engineer', () => {
             const output = obj.getRole();
             expect(output).toEqual(role);
         });
-    });  
+    });
+    
+    describe('getGithub', () => {
+        it('Can return github username', () => {
+            const github = 'user';
+            const obj = new Engineer('Abi', '1234', 'george@fun.com', github);
+            const output = obj.getGithub();
+            expect(output).toEqual(github);
+        });
+    });
 });
