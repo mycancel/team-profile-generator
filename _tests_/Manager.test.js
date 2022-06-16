@@ -27,7 +27,7 @@ describe('Manager', () => {
     it('Can set office number', () => {
         const office = '437';
         const obj = new Manager('Abi', '1234', 'george@fun.com', office);
-        expect(obj.office).toEqual(office);
+        expect(obj.officeNumber).toEqual(office);
     });
 
     it('Should throw an error if not provided a name value', () => {
