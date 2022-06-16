@@ -23,7 +23,7 @@ describe('Engineer', () => {
     });
 
     it('Can set github username', () => {
-        const github = 'george@fun.com';
+        const github = 'user';
         const obj = new Engineer('Abi', '1234','george@fun.com', github);
         expect(obj.github).toEqual(github);
     });
