@@ -1,3 +1,5 @@
+const Engineer = require('../lib/Engineer');
+
 describe('Engineer', () => {
     it('Can create an Engineer instance', () => {
         const obj = new Engineer('Abi', '1234', 'george@fun.com', 'user');
