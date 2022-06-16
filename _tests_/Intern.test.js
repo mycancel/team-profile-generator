@@ -1,3 +1,5 @@
+const Intern = require('../lib/Intern');
+
 describe('Intern', () => {
     it('Can create an Intern instance', () => {
         const obj = new Intern('Abi', '1234', 'george@fun.com', 'UNCC');
