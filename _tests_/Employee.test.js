@@ -2,8 +2,8 @@ const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
     it('Can create an Employee instance', () => {
-        const employ = new Employee('Abi', '1234', 'george@fun.com');
-        expect((typeof (employ))).toBe('object');
+        const obj = new Employee('Abi', '1234', 'george@fun.com');
+        expect((typeof (obj))).toBe('object');
     });
 
     it('Can set name', () => {
