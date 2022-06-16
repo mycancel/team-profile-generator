@@ -74,4 +74,13 @@ describe('Employee', () => {
             expect(output).toEqual(email);
         });
     });
+
+    describe('getRole', () => {
+        it('Can return role', () => {
+            const role = 'Employee'
+            const obj = new Employee('Abi', '1234', 'george@fun.com');
+            const output = obj.getRole();
+            expect(output).toEqual(role);
+        });
+    });  
 });
