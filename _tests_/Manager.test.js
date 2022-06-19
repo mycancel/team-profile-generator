@@ -40,7 +40,7 @@ describe('Manager', () => {
     it('Should throw an error if not provided a name value', () => {
         const cb = () => new Manager('', '1234', 'george@fun.com', '437');
         const err = new Error(
-            'Please enter a name.'
+            'Please enter a valid name.'
         );
         expect(cb).toThrowError(err);
     });
@@ -49,7 +49,7 @@ describe('Manager', () => {
     it('Should throw an error if not provided an id value', () => {
         const cb = () => new Manager('Abi', '', 'george@fun.com', '437');
         const err = new Error(
-            'Please enter an id.'
+            'Please enter a valid id.'
         );
         expect(cb).toThrowError(err);
     });
@@ -58,7 +58,7 @@ describe('Manager', () => {
     it('Should throw an error if not provided an email value', () => {
         const cb = () => new Manager('Abi', '1234', '', '437');
         const err = new Error(
-            'Please enter an email.'
+            'Please enter a valid email.'
         );
         expect(cb).toThrowError(err);
     });
@@ -67,7 +67,7 @@ describe('Manager', () => {
     it('Should throw an error if not provided an office number value', () => {
         const cb = () => new Manager('Abi', '1234', 'george@fun.com', '');
         const err = new Error(
-            'Please enter an office number.'
+            'Please enter a valid office number.'
         );
         expect(cb).toThrowError(err);
     });
