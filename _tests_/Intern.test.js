@@ -40,7 +40,7 @@ describe('Intern', () => {
     it('Should throw an error if not provided a name value', () => {
         const cb = () => new Intern('', '1234', 'george@fun.com', 'UNCC');
         const err = new Error(
-            'Please enter a name.'
+            'Please enter a valid name.'
         );
         expect(cb).toThrowError(err);
     });
@@ -49,7 +49,7 @@ describe('Intern', () => {
     it('Should throw an error if not provided an id value', () => {
         const cb = () => new Intern('Abi', '', 'george@fun.com', 'UNCC');
         const err = new Error(
-            'Please enter an id.'
+            'Please enter a valid id.'
         );
         expect(cb).toThrowError(err);
     });
@@ -58,7 +58,7 @@ describe('Intern', () => {
     it('Should throw an error if not provided an email value', () => {
         const cb = () => new Intern('Abi', '1234', '', 'UNCC');
         const err = new Error(
-            'Please enter an email.'
+            'Please enter a valid email.'
         );
         expect(cb).toThrowError(err);
     });
@@ -67,7 +67,7 @@ describe('Intern', () => {
     it('Should throw an error if not provided a school name', () => {
         const cb = () => new Intern('Abi', '1234', 'george@fun.com', '');
         const err = new Error(
-            'Please enter a school name.'
+            'Please enter a valid school name.'
         );
         expect(cb).toThrowError(err);
     });
