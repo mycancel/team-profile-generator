@@ -30,6 +30,7 @@ function init() {
         .then((answers) => {
             // Save managerQs to Manager class
             const managerProfile = new Manager(answers);
+            console.log(answers);
             // TODO: Create a function for switching to more questions
         });
 };
