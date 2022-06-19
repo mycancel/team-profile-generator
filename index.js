@@ -24,6 +24,14 @@ const managerQs = [
     },
 ];
 
+const continueQ = [
+    {
+        type: 'confirm',
+        message: 'Would you like to add another team member?',
+        name: 'confirm',
+    },
+];
+
 function init() {
     inquirer
         .prompt(managerQs)
@@ -31,8 +39,25 @@ function init() {
             // Save managerQs to Manager class
             const managerProfile = new Manager(answers);
             console.log(answers);
-            // TODO: Create a function for switching to more questions
+            console.log('\n');
+            continueChoice();
         });
+};
+
+function continueChoice() {
+    inquirer
+        .prompt(continueQ)
+        .then((choice) => {
+            console.log('\n');
+            if (choice.confirm === true) {
+                // Role select
+                // TODO: Add role select function
+                console.log('select role');
+            } else {
+                // Generate HTML
+                console.log('HTML generating');
+            }
+        })
 };
 
 init();
