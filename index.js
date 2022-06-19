@@ -24,14 +24,6 @@ const managerQs = [
     },
 ];
 
-const continueQ = [
-    {
-        type: 'confirm',
-        message: 'Would you like to add another team member?',
-        name: 'confirm',
-    },
-];
-
 function init() {
     inquirer
         .prompt(managerQs)
@@ -46,7 +38,13 @@ function init() {
 
 function continueChoice() {
     inquirer
-        .prompt(continueQ)
+        .prompt([
+            {
+                type: 'confirm',
+                message: 'Would you like to add another team member?',
+                name: 'confirm',
+            },
+        ])
         .then((choice) => {
             console.log('\n');
             if (choice.confirm === true) {
