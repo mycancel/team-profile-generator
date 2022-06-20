@@ -36,42 +36,6 @@ describe('Intern', () => {
         expect(obj.school).toEqual(school);
     });
 
-    // // Negative Test: will an error be thrown if a name is not given
-    // it('Should throw an error if not provided a name value', () => {
-    //     const cb = () => new Intern(['', '1234', 'george@fun.com', 'UNCC']);
-    //     const err = new Error(
-    //         'Please enter a valid name.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if an id is not given
-    // it('Should throw an error if not provided an id value', () => {
-    //     const cb = () => new Intern(['Abi', '', 'george@fun.com', 'UNCC']);
-    //     const err = new Error(
-    //         'Please enter a valid id.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-    
-    // // Negative Test: will an error be thrown if an email is not given
-    // it('Should throw an error if not provided an email value', () => {
-    //     const cb = () => new Intern(['Abi', '1234', '', 'UNCC']);
-    //     const err = new Error(
-    //         'Please enter a valid email.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if a school is not given
-    // it('Should throw an error if not provided a school name', () => {
-    //     const cb = () => new Intern(['Abi', '1234', 'george@fun.com', '']);
-    //     const err = new Error(
-    //         'Please enter a valid school name.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
     // Within the getName method
     describe('getName', () => {
         // Positive Test

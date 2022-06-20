@@ -36,42 +36,6 @@ describe('Engineer', () => {
         expect(obj.github).toEqual(github);
     });
 
-    // // Negative Test: will an error be thrown if a name is not given
-    // it('Should throw an error if not provided a name value', () => {
-    //     const cb = () => new Engineer(['', '1234', 'george@fun.com', 'user']);
-    //     const err = new Error(
-    //         'Please enter a valid name.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if an id is not given
-    // it('Should throw an error if not provided an id value', () => {
-    //     const cb = () => new Engineer(['Abi', '', 'george@fun.com', 'user']);
-    //     const err = new Error(
-    //         'Please enter a valid id.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-    
-    // // Negative Test: will an error be thrown if an email is not given
-    // it('Should throw an error if not provided an email value', () => {
-    //     const cb = () => new Engineer(['Abi', '1234', '', 'user']);
-    //     const err = new Error(
-    //         'Please enter a valid email.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if a username is not given
-    // it('Should throw an error if not provided a github username', () => {
-    //     const cb = () => new Engineer(['Abi', '1234', 'george@fun.com', '']);
-    //     const err = new Error(
-    //         'Please enter a valid GitHub username.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
     // Within the getName method
     describe('getName', () => {
         // Positive Test

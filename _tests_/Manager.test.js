@@ -36,42 +36,6 @@ describe('Manager', () => {
         expect(obj.officeNumber).toEqual(office);
     });
 
-    // // Negative Test: will an error be thrown if a name is not given
-    // it('Should throw an error if not provided a name value', () => {
-    //     const cb = () => new Manager(['', '1234', 'george@fun.com', '437']);
-    //     const err = new Error(
-    //         'Please enter a valid name.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if an id is not given
-    // it('Should throw an error if not provided an id value', () => {
-    //     const cb = () => new Manager(['Abi', '', 'george@fun.com', '437']);
-    //     const err = new Error(
-    //         'Please enter a valid id.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-    
-    // // Negative Test: will an error be thrown if an email is not given
-    // it('Should throw an error if not provided an email value', () => {
-    //     const cb = () => new Manager(['Abi', '1234', '', '437']);
-    //     const err = new Error(
-    //         'Please enter a valid email.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
-    // // Negative Test: will an error be thrown if an office number is not given
-    // it('Should throw an error if not provided an office number value', () => {
-    //     const cb = () => new Manager(['Abi', '1234', 'george@fun.com', '']);
-    //     const err = new Error(
-    //         'Please enter a valid office number.'
-    //     );
-    //     expect(cb).toThrowError(err);
-    // });
-
     // Within the getName method
     describe('getName', () => {
         // Positive Test
