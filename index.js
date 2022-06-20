@@ -76,10 +76,9 @@ function init() {
     inquirer
         .prompt(managerQs)
         .then((answers) => {
-            // Save managerQs to Manager class
+            // Save managerQs to new instance of Manager
             const dataValues = Object.values(answers)
             const managerProfile = new Manager(dataValues);
-            console.log(dataValues);
             console.log('\n');
             continueChoice();
         })
@@ -95,12 +94,10 @@ function continueChoice() {
             },
         ])
         .then((choice) => {
-            if (choice.confirm === true) {
-                // Role select
-                selectRole();
-            } else {
+            if (choice.confirm === true) selectRole();
+            else {
                 // Generate HTML
-                console.log('HTML generating');
+                console.log('\nHTML generating');
             }
         })
 };
@@ -117,11 +114,9 @@ function selectRole() {
         ])
         .then((answer) => {
             console.log('\n');
-            if (answer.role === 'Engineer') {
-                addEngineer();
-            } else if (answer.role === 'Intern') {
-                addIntern();
-            } else {
+            if (answer.role === 'Engineer') addEngineer();
+            else if (answer.role === 'Intern') addIntern();
+            else {
                 // Generate HTML
                 console.log('HTML generating');
             }
@@ -132,26 +127,24 @@ function addEngineer() {
     inquirer
         .prompt(engineerQs)
         .then((answers) => {
-            // Save engineerQs to Engineer class
+            // Save engineerQs to new instance of Engineer
             const dataValues = Object.values(answers)
             const engineerProfile = new Engineer(dataValues);
-            console.log(dataValues);
             console.log('\n');
             continueChoice();
         })
-}
+};
 
 function addIntern() {
     inquirer
         .prompt(internQs)
         .then((answers) => {
-            // Save internQs to Intern class
+            // Save internQs to new instance of Intern
             const dataValues = Object.values(answers)
             const internProfile = new Intern(dataValues);
-            console.log(dataValues);
             console.log('\n');
             continueChoice();
         })
-}
+};
 
 init();
