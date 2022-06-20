@@ -53,8 +53,9 @@ function init() {
         .prompt(managerQs)
         .then((answers) => {
             // Save managerQs to Manager class
-            const managerProfile = new Manager(answers);
-            console.log(answers);
+            const dataValues = Object.values(answers)
+            const managerProfile = new Manager(dataValues);
+            console.log(dataValues);
             console.log('\n');
             continueChoice();
         })
@@ -105,14 +106,15 @@ function selectRole() {
 
 function addEngineer() {
     inquirer
-    .prompt(engineerQs)
-    .then((answers) => {
-        // Save engineerQs to Engineer class
-        const engineerProfile = new Engineer(answers);
-        console.log(answers);
-        console.log('\n');
-        continueChoice();
-    })
+        .prompt(engineerQs)
+        .then((answers) => {
+            // Save engineerQs to Engineer class
+            const dataValues = Object.values(answers)
+            const engineerProfile = new Engineer(dataValues);
+            console.log(dataValues);
+            console.log('\n');
+            continueChoice();
+        })
 }
 
 init();
