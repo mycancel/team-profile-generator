@@ -1,3 +1,6 @@
+const fs = require('fs');
+
+// Creates index.html in output folder with template
 function generateHTML(profiles) {
     const template = (`
 <!DOCTYPE html>
@@ -17,15 +20,15 @@ function generateHTML(profiles) {
         <h1 class="text-center">Our Team</h1>
     </header>
     <main class="row d-flex justify-content-center">
-
     ${displayCards(profiles)}
-
     </main>
 </body>
 
 </html>
 `);
-    console.log(template);
+    fs.writeFileSync('./output/index.html', template);
+    console.log('Team Profile Generated!');
+    process.exit();
 };
 
 function displayCards(profiles) {
@@ -53,6 +56,7 @@ function createCard(profile) {
     return card;
 }
 
+// Adds extra list item related to the role
 function roleLi(profile) {
     if (profile.getRole() === 'Manager') {
         return `<li class="list-group-item">Office: ${profile.officeNumber}</li>`;
