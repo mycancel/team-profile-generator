@@ -3,6 +3,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const memory = [];
+
 const managerQs = [
     {
         type: 'input',
@@ -79,6 +81,7 @@ function init() {
             // Save managerQs to new instance of Manager
             const dataValues = Object.values(answers)
             const managerProfile = new Manager(dataValues);
+            memory.push(managerProfile);
             console.log('\n');
             continueChoice();
         })
@@ -94,7 +97,7 @@ function continueChoice() {
             },
         ])
         .then((choice) => {
-            if (choice.confirm === true) selectRole();
+            if (choice.confirm) selectRole();
             else {
                 // Generate HTML
                 console.log('\nHTML generating');
@@ -130,6 +133,7 @@ function addEngineer() {
             // Save engineerQs to new instance of Engineer
             const dataValues = Object.values(answers)
             const engineerProfile = new Engineer(dataValues);
+            memory.push(engineerProfile);
             console.log('\n');
             continueChoice();
         })
@@ -142,6 +146,7 @@ function addIntern() {
             // Save internQs to new instance of Intern
             const dataValues = Object.values(answers)
             const internProfile = new Intern(dataValues);
+            memory.push(internProfile);
             console.log('\n');
             continueChoice();
         })
