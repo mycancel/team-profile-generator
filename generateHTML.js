@@ -46,10 +46,24 @@ function createCard(profile) {
             <ul class="list-group">
                 <li class="list-group-item">Id: ${profile.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${profile.getEmail()}">${profile.getEmail()}</a></li>
+                ${roleLi(profile)}
             </ul>
         </article>
     `);
     return card;
+}
+
+function roleLi(profile) {
+    if (profile.getRole() === 'Manager') {
+        return `<li class="list-group-item">Office: ${profile.officeNumber}</li>`;
+    }
+    if (profile.getRole() === 'Engineer') {
+        return `<li class="list-group-item">Github: <a href="https://github.com/${profile.getGithub()}">${profile.getGithub()}</a></li>`;
+    }
+    if (profile.getRole() === 'Intern') {
+        return `<li class="list-group-item">${profile.getSchool()}: UNCC</li>`;
+    }
+    return ``;
 }
 
  module.exports = generateHTML;
