@@ -18,6 +18,8 @@ function generateHTML(profiles) {
     </header>
     <main class="row d-flex justify-content-center">
 
+    ${profiles.map(createCard)}
+
     </main>
 </body>
 
@@ -25,5 +27,19 @@ function generateHTML(profiles) {
 `);
     console.log(template);
 };
+
+function createCard(profile) {
+    const card = (`
+        <article class="col-10 col-md-6 col-lg-3 m-4 p-2 card bg-info text-light">
+            <h2 class="text-center">${profile.getName()}</h2>
+            <h3 class="text-center fs-5"><em>${profile.getRole()}</em></h3>
+            <ul class="list-group">
+                <li class="list-group-item">Id: ${profile.getId()}</li>
+                <li class="list-group-item">Email: <a href="mailto:${profile.getEmail()}">${profile.getEmail()}</a></li>
+            </ul>
+        </article>
+    `);
+    return card;
+}
 
  module.exports = generateHTML;
