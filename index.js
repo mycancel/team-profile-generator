@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
 
 const managerQs = [
     {
@@ -23,6 +24,29 @@ const managerQs = [
         name: 'officeNumber',
     },
 ];
+
+const engineerQs = [
+    {
+        type: 'input',
+        message: 'What is the engineer\'s name?',
+        name: 'eName',
+    },
+    {
+        type: 'input',
+        message: 'What is the engineer\'s id?',
+        name: 'eId',
+    },
+    {
+        type: 'input',
+        message: 'What is the engineer\'s email?',
+        name: 'eEmail',
+    },
+    {
+        type: 'input',
+        message: 'What is the engineer\'s GitHub username?',
+        name: 'github',
+    },
+]
 
 function init() {
     inquirer
@@ -69,7 +93,7 @@ function selectRole() {
         .then((answer) => {
             console.log('\n');
             if (answer.role === 'Engineer') {
-                console.log('Engineer');
+                addEngineer();
             } else if (answer.role === 'Intern') {
                 console.log('Intern');
             } else {
@@ -78,5 +102,17 @@ function selectRole() {
             }
         })
 };
+
+function addEngineer() {
+    inquirer
+    .prompt(engineerQs)
+    .then((answers) => {
+        // Save engineerQs to Engineer class
+        const engineerProfile = new Engineer(answers);
+        console.log(answers);
+        console.log('\n');
+        continueChoice();
+    })
+}
 
 init();
