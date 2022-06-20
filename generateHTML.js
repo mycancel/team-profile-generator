@@ -1,4 +1,5 @@
-const start = (`
+function generateHTML(profiles) {
+    const template = (`
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +17,13 @@ const start = (`
         <h1 class="text-center">Our Team</h1>
     </header>
     <main class="row d-flex justify-content-center">
-`);
 
-const end = (`
     </main>
 </body>
 
 </html>
 `);
+    console.log(template);
+};
+
+ module.exports = generateHTML;

@@ -2,6 +2,9 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./generateHTML');
+
+const memory = [];
 
 const managerQs = [
     {
@@ -79,6 +82,7 @@ function init() {
             // Save managerQs to new instance of Manager
             const dataValues = Object.values(answers)
             const managerProfile = new Manager(dataValues);
+            memory.push(managerProfile);
             console.log('\n');
             continueChoice();
         })
@@ -97,7 +101,8 @@ function continueChoice() {
             if (choice.confirm) selectRole();
             else {
                 // Generate HTML
-                console.log('\nHTML generating');
+                console.log('\nHTML generating\n');
+                generateHTML(memory);
             }
         })
 };
@@ -118,7 +123,8 @@ function selectRole() {
             else if (answer.role === 'Intern') addIntern();
             else {
                 // Generate HTML
-                console.log('HTML generating');
+                console.log('HTML generating\n');
+                generateHTML(memory);
             }
         })
 };
@@ -130,6 +136,7 @@ function addEngineer() {
             // Save engineerQs to new instance of Engineer
             const dataValues = Object.values(answers)
             const engineerProfile = new Engineer(dataValues);
+            memory.push(engineerProfile);
             console.log('\n');
             continueChoice();
         })
@@ -142,6 +149,7 @@ function addIntern() {
             // Save internQs to new instance of Intern
             const dataValues = Object.values(answers)
             const internProfile = new Intern(dataValues);
+            memory.push(internProfile);
             console.log('\n');
             continueChoice();
         })
