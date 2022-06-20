@@ -1,22 +1,23 @@
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const managerQs = [
     {
         type: 'input',
         message: 'What is the manager\'s name?',
-        name: 'mName',
+        name: 'name',
     },
     {
         type: 'input',
         message: 'What is the manager\'s id?',
-        name: 'mId',
+        name: 'id',
     },
     {
         type: 'input',
         message: 'What is the manager\'s email?',
-        name: 'mEmail',
+        name: 'email',
     },
     {
         type: 'input',
@@ -29,24 +30,47 @@ const engineerQs = [
     {
         type: 'input',
         message: 'What is the engineer\'s name?',
-        name: 'eName',
+        name: 'name',
     },
     {
         type: 'input',
         message: 'What is the engineer\'s id?',
-        name: 'eId',
+        name: 'id',
     },
     {
         type: 'input',
         message: 'What is the engineer\'s email?',
-        name: 'eEmail',
+        name: 'email',
     },
     {
         type: 'input',
         message: 'What is the engineer\'s GitHub username?',
         name: 'github',
     },
-]
+];
+
+const internQs = [
+    {
+        type: 'input',
+        message: 'What is the intern\'s name?',
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: 'What is the intern\'s id?',
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: 'What is the intern\'s email?',
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: 'What is the intern\'s school?',
+        name: 'school',
+    },
+];
 
 function init() {
     inquirer
@@ -96,7 +120,7 @@ function selectRole() {
             if (answer.role === 'Engineer') {
                 addEngineer();
             } else if (answer.role === 'Intern') {
-                console.log('Intern');
+                addIntern();
             } else {
                 // Generate HTML
                 console.log('HTML generating');
@@ -111,6 +135,19 @@ function addEngineer() {
             // Save engineerQs to Engineer class
             const dataValues = Object.values(answers)
             const engineerProfile = new Engineer(dataValues);
+            console.log(dataValues);
+            console.log('\n');
+            continueChoice();
+        })
+}
+
+function addIntern() {
+    inquirer
+        .prompt(internQs)
+        .then((answers) => {
+            // Save internQs to Intern class
+            const dataValues = Object.values(answers)
+            const internProfile = new Intern(dataValues);
             console.log(dataValues);
             console.log('\n');
             continueChoice();
