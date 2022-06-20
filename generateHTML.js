@@ -18,7 +18,7 @@ function generateHTML(profiles) {
     </header>
     <main class="row d-flex justify-content-center">
 
-    ${profiles.map(createCard)}
+    ${displayCards(profiles)}
 
     </main>
 </body>
@@ -28,6 +28,16 @@ function generateHTML(profiles) {
     console.log(template);
 };
 
+function displayCards(profiles) {
+    // returns new array with template literals for each card
+    const cards = profiles.map(createCard);
+    // reduces array to a single value
+    const reduced = cards.reduce((previous, current) => previous + current);
+    // returns value to template in generateHTML
+    return reduced;
+}
+
+// Uses class methods to populate each card
 function createCard(profile) {
     const card = (`
         <article class="col-10 col-md-6 col-lg-3 m-4 p-2 card bg-info text-light">
