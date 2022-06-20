@@ -33,7 +33,7 @@ function init() {
             console.log(answers);
             console.log('\n');
             continueChoice();
-        });
+        })
 };
 
 function continueChoice() {
@@ -46,11 +46,32 @@ function continueChoice() {
             },
         ])
         .then((choice) => {
-            console.log('\n');
             if (choice.confirm === true) {
                 // Role select
-                // TODO: Add role select function
-                console.log('select role');
+                selectRole();
+            } else {
+                // Generate HTML
+                console.log('HTML generating');
+            }
+        })
+};
+
+function selectRole() {
+    inquirer
+        .prompt([
+            {
+                type: 'rawlist',
+                message: 'What role would you like to add?',
+                choices: ['Engineer', 'Intern', 'Cancel'],
+                name: 'role',
+            },
+        ])
+        .then((answer) => {
+            console.log('\n');
+            if (answer.role === 'Engineer') {
+                console.log('Engineer');
+            } else if (answer.role === 'Intern') {
+                console.log('Intern');
             } else {
                 // Generate HTML
                 console.log('HTML generating');
