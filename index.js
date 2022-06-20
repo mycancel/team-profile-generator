@@ -124,6 +124,7 @@ const internQs = [
 ];
 
 function init() {
+    console.log('Answer these questions to generate your Team Profile.')
     inquirer
         .prompt(managerQs)
         .then((answers) => {
@@ -175,7 +176,7 @@ function continueChoice() {
             if (choice.confirm) selectRole();
             else {
                 // Generate HTML
-                console.log('\nHTML generating\n');
+                console.log('\nHTML Generating...\n');
                 generateHTML(memory);
             }
         })
@@ -197,7 +198,7 @@ function selectRole() {
             else if (answer.role === 'Intern') addIntern();
             else {
                 // Generate HTML
-                console.log('HTML generating\n');
+                console.log('HTML Generating...\n');
                 generateHTML(memory);
             }
         })
